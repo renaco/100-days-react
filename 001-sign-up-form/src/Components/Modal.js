@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Input from './Input'
+import Input from './Input';
 
 export default class Modal extends Component {
+  constructor(props){
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)  
+  }
 
   handleSubmit(e) {
-    console.log(e)
-    this.setState({ 
-      mounted: false
-    })
+    console.log(this.props.handleReceiver )
+    this.props.handleReceiver();
     e.preventDefault();
   }
 
@@ -15,7 +17,7 @@ export default class Modal extends Component {
     return (
       <div className="Modal">
         <form 
-          onSubmit={this.props.onSubmit}
+          onSubmit={this.handleSubmit}
           className="ModalForm">
           <Input
             id="name"
@@ -32,7 +34,7 @@ export default class Modal extends Component {
             type="password"
             placeholder="password"
           />
-          <button>Log in <i className="fa fa-fw fa-chevron-right"></i></button>
+          <button type="submit">Log ssin <i className="fa fa-fw fa-chevron-right"></i></button>
         </form>
       </div>
     )

@@ -3,42 +3,40 @@ import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Modal from './Components/Modal'
 
-let child;
 
 class App extends Component {
-  
+  child
   constructor(props) {
       super(props)
 
       this.state = {
-        mounted: true
+        mounted: false
       }
+      this.handleReceiver = this.handleReceiver.bind(this)
 
-      if (this.state.mounted) {
-        child = (<Modal onSubmit={this.handleSubmit} />);
-        console.log('this', this.state.mounted, child)
-      }
     }
 
-  componentDidMount() {
-    // console.log('this', this.state.mounted)
-    // this.setState({
-    //   mounted: true
-    //   // mounted: true
-    // }),
-    // console.log('this', this.state.mounted)
-    // console.timeEnd()
-  }
+    handleReceiver() {
+      console.log('this false on the father')
+      this.setState({
+        mounted: false
+      })
+    }
 
-  render() {
+    componentDidMount() {
+      this.setState({
+        mounted: true
+      })
+    }
 
-    return (
-      <div className="App">
+    render() {
+      return (
+        <div className="App">
         <ReactCSSTransitionGroup
           transitionName="example"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
-          { child }
+          {this.state.mounted && <Modal onSubmit={this.handleSubmit} mounted={this.state.mounted} handleReceiver={this.handleReceiver}/>}
         </ReactCSSTransitionGroup>
       </div>
     );
