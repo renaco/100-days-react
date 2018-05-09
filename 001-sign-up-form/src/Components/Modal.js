@@ -4,7 +4,7 @@ import Input from './Input';
 export default class Modal extends Component {
   constructor(props){
     super(props)
-    this.handleSubmit = this.handleSubmit.bind(this)  
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {

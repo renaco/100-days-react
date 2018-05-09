@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import * as WorkSpace from './WorkspaceComponents';
 
 class ImagePreview extends Component {
   render() {
     return (
-      <div>
-        {/* <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg"> */}
+      <div className="ImagePreview" 
+        style={{ 'backgroundImage': 'url(' + this.props.image + ')' }}>
+        <div className="WorkspaceOverview">
+        <WorkSpace.Information name="Coworking Name Space" price={this.state.price} duration="1" />
+        <WorkSpace.Meta people={this.state.people} />
+        </div>
       </div>
     );
   }

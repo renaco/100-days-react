@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class OrderSummary extends Component {
+class Container extends Component {
   render() {
     return (
       <div>
-        OrderSummary
+        Container
       </div>
     );
   }
 }
 
-export default OrderSummary;
+export default Container;
