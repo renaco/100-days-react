@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Container extends Component {
   render() {
     return (
-      <div>
-        Container
+      <div className="Container">
+        {this.props.children}
       </div>
     );
   }

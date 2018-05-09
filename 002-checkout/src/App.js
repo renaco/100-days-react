@@ -13,12 +13,12 @@ class App extends Component {
 
     this.state = {
       adj: 0,
+      discount: 5,
+      duration: 5,
       mounted: false,
       people: 1,
       price: 320.00,
-      tax: 20,
-      duration: 5,
-      discount: 5
+      tax: 20
     }
 
     this.handleChange = this.handleChange.bind(this);

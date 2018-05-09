@@ -1,17 +1,17 @@
 @import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
 @import "https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900";
+
 body {
-  color: #00eaff;
   font-family: 'Lato', sans-serif;
 }
 
 .App {
-  width: 100vw;
+  background: #000;
   height: 100vh;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  background: #17183B;
+  width: 100vw;
 }
 .App .Overlay {
   width: 100vw;
@@ -26,13 +26,13 @@ body {
 }
 
 header {
+  background: white;
+  left: 0;
+  padding: 20px;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100vw;
-  background: white;
   z-index: 10;
-  padding: 20px;
 }
 
 .Container {
@@ -226,6 +226,7 @@ header {
           flex: 1 0 auto;
 }
 .ExpiryDate .Expiry {
+  align-self: flex-end;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

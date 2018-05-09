@@ -23,7 +23,6 @@ export function Information(props) {
 
 export function Meta(props) {
   let people = pluralize('persons', props.people);
-
   return(
     <div className="WorkspaceMeta">
       <div className="Description">
