@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <div>
+      <header className="Header">
         <input 
           onChange={this.props.onChange}
           type="range"
@@ -11,8 +11,8 @@ class Header extends Component {
           min="1"
           step="1"
         />
-        <h2>{this.props.adj}</h2>
-      </div>
+        <h1>{this.props.adj} Wilsaos</h1>
+      </header>
     );
   }
 }

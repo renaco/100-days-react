@@ -9,11 +9,11 @@ class ImagePreview extends Component {
         <div className="WorkspaceOverview">
           <WorkSpace.Information
             name="Coworking Name Space, South Korea"
-            // price={this.state.price}
+            price={this.props.price}
             duration="1"
           />
           <WorkSpace.Meta
-            // people={this.state.people}
+            people={this.props.people}
           />
         </div>
       </div>

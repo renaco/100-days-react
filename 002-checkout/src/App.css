@@ -25,7 +25,7 @@ body {
   opacity: .2;
 }
 
-header {
+.Header {
   background: white;
   left: 0;
   padding: 20px;
@@ -33,6 +33,11 @@ header {
   top: 0;
   width: 100vw;
   z-index: 10;
+}
+
+.Header input[type="range"] {
+  position: absolute;
+  z-index: 9;
 }
 
 .Container {

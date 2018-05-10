@@ -59,7 +59,7 @@ class PaymentFormComponents extends Component {
   render() {
     return (
       <div>
-        <form onSubmit="{props.onSubmit}">
+        <form onSubmit={this.props.onSubmit}>
           <div className="Title">Payment information</div>
           <BasicInput name="name" label="Name on credit card" type="text" placeholder="Juan Perez" />
           <BasicInput name="card" label="Credit card number" type="number" placeholder="0000 0000 0000 0000" />

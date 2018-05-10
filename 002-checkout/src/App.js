@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Checkout from './components/CheckoutArea/Checkout';
 import ImagePreview from './components/ImagePreviewArea/ImagePreview';
-// import Overlay from './components/Layout/Overlay';
+import Overlay from './components/Layout/Overlay';
 import Container from './components/Layout/Container';
 import Header from './components/Layout/Header';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -15,6 +15,7 @@ class App extends Component {
       adj: 0,
       discount: 5,
       duration: 5,
+      image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg',
       mounted: false,
       people: 1,
       price: 320.00,
@@ -26,7 +27,8 @@ class App extends Component {
 
   handleChange(e) {
     this.setState({
-      adj: e.target.value
+      adj: e.target.value,
+      duration: e.target.value
     })
   }
 
@@ -38,15 +40,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <ReactCSSTransitionGroup transitionName="overlay" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-          <Overlay image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg"/>
-        </ReactCSSTransitionGroup> */}
-        < ReactCSSTransitionGroup transitionName="container" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+        <ReactCSSTransitionGroup
+          transitionName="overlay"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          <Overlay image={this.state.image}/>
+        </ReactCSSTransitionGroup>
+        < ReactCSSTransitionGroup
+          transitionName="container"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
         <Container>
           <ImagePreview 
             price={this.state.price}
             duration={this.state.duration}
             people={this.state.people}
+            image={this.state.image}
             />
           <Checkout 
             duration={this.state.duration}
@@ -57,7 +67,10 @@ class App extends Component {
             />
         </Container>
         </ReactCSSTransitionGroup>
-        <Header onChange={this.handleChange} adj={this.state.adj}/>
+        <Header
+          onChange={this.handleChange}
+          adj={this.state.adj}
+        />
       </div>
     );
   }

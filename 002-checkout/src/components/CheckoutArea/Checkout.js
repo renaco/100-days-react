@@ -6,8 +6,15 @@ class Checkout extends Component {
   render() {
     return (
       <div className="Checkout">
-        <OrderSummary/>
-        <PaymentFormComponents/>
+        <OrderSummary 
+          duration={this.props.duration}
+          discount={this.props.discount}
+          tax={this.props.tax}
+          price={this.props.price}
+        />
+        <PaymentFormComponents
+          onSubmit={this.props.onSubmit}
+        />
       </div>
     );
   }

@@ -15,8 +15,8 @@ class OrderSummary extends Component {
         <table>
           <tbody>
             <tr>
-              <td>{this.props.price} x {duration}</td>
-              <td>{initialTotal} GBP</td>
+              <td>{this.props.price} x { duration }</td>
+              <td>{ initialTotal } GBP</td>
             </tr>
             <tr>
               <td>Discount</td>
