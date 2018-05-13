@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListToggle from './ListToggle';
 
 class Item extends Component {
   render() {
@@ -8,6 +9,7 @@ class Item extends Component {
           <div className="title">{ this.props.title }</div>
           <div className="rating">{ this.props.score } / 10</div>
           <div className="plot">{ this.props.overview }</div>
+          <ListToggle />
         </div>
       </div>
     );

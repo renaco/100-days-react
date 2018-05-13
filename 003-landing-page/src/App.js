@@ -30,7 +30,7 @@ class App extends Component {
   // }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className="App">
         <header className="Header">
@@ -48,7 +48,6 @@ class App extends Component {
         <TitleList title='Trending now' url='discover/movie?sort_by=popularity.desc&page=1' />
         <TitleList title='Most watched in Horror' url='genre/27/movies?sort_by=popularity.desc&page=1' />
         <TitleList title='Comedy magic' url='genre/35/movies?sort_by=popularity.desc&page=1' />
-        {/* <ListToggle /> */}
       </div>
     );
   }

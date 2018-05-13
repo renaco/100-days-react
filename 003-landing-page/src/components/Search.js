@@ -14,14 +14,14 @@ class Search extends Component {
   }
 
   handleKeyUp(e) {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     if (e.key === 'Enter' && this.props.searchTerm !== '') {
       // var searchUrl = 'search/multi?query=' + this.state.searchTerm + '&api_key=' + this.apiKey
     }
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div id="search" className="Search">
         <input
