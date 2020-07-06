@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Input extends Component {
-  render () {
-    return (
-      <div className="Input">
-        <input
-          id={this.props.name}
-          autoComplete="false"
-          required
-          type={this.props.type}
-          placeholder={this.props.placeholder}
-        />
-        <label htmlFor={this.props.id}></label>
-      </div>
-    )
-  }
+function Input({name, type, id, placeholder}) {
+  return (
+    <div className="Input">
+      <input
+        id={name}
+        autoComplete="false"
+        required
+        type={type}
+        placeholder={placeholder}
+      />
+      <label htmlFor={id}></label>
+    </div>
+  )
 }
+
+export default Input;

@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
 body {
-  /* background-image: url(https://unsplash.it/1400/795); */
+  background-image: url(https://unsplash.it/1400/795);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,6 +89,7 @@ button {
   padding: 10px 9px 10px 11px;
   text-transform: uppercase;
   width: 100%;
+  cursor: pointer;
 }
 button .fa {
   cursor: pointer;

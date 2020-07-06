@@ -1,42 +1,43 @@
-import React, { Component } from 'react';
-import Input from './Input';
+import React, { useState } from 'react';
+import Input from './Input.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
-export default class Modal extends Component {
-  constructor(props){
-    super(props)
-    this.handleSubmit = this.handleSubmit.bind(this)
+const Modal = props => {
+
+  const [submit, setSubmit] = useState(props.mounted)
+
+  const sendForm = event => {
+    setSubmit(props.mounted)
+    event.preventDefault()
   }
 
-  handleSubmit(e) {
-    console.log(this.props.handleReceiver )
-    this.props.handleReceiver();
-    e.preventDefault();
-  }
-
-  render() {
-    return (
-      <div className="Modal">
-        <form 
-          onSubmit={this.handleSubmit}
-          className="ModalForm">
-          <Input
-            id="name"
-            type="text"
-            placeholder="Ermenegildo Peña"
-          />
-          <Input
-            id="username"
-            type="text"
-            placeholder="mrjacklai@gmail.com"
-          />
-          <Input
-            id="password"
-            type="password"
-            placeholder="password"
-          />
-          <button type="submit">Log ssin <i className="fa fa-fw fa-chevron-right"></i></button>
-        </form>
-      </div>
-    )
-  }
+  return (
+    <div className="Modal">
+      <form
+        onSubmit={ sendForm }
+        className="ModalForm">
+        <Input
+          id="username"
+          type="text"
+          placeholder="name"
+        />
+        <Input
+          id="username"
+          type="email"
+          placeholder="email@domain.com"
+        />
+        <Input
+          id="password"
+          type="password"
+          placeholder="password"
+        />
+        <button type="submit">Log in
+          <FontAwesomeIcon icon={faCoffee} />
+        </button>
+      </form>
+    </div>
+  )
 }
+
+export default Modal;
