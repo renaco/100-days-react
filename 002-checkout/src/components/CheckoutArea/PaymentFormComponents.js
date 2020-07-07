@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-function BasicInput(props) {
+const BasicInput = (props) => {
   return (
     <div className="BasicInput">
       <label htmlFor={props.name}>{props.label}</label>
@@ -9,44 +9,60 @@ function BasicInput(props) {
   );
 }
 
-function ExpiryDate(props) {
+const SelectItem = (props) => {
+  return (
+    <select>
+      {props.items.map((item, index) => {
+        return (
+          <option value={index} key={index}>{item}</option>
+        )
+      })}
+    </select>
+  )
+}
+
+const ExpiryDate = () => {
+
+  const Months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ]
+
+  const Years = [
+    '2016',
+    '2017',
+    '2018',
+    '2019',
+    '2020',
+    '2021'
+  ]
 
   return (
     <div className="ExpiryDate">
       <label>Expires on</label>
       <div className="Expiry">
-        <select name="" id="">
-          <option value="">Enero</option>
-          <option value="">February</option>
-          <option value="">March</option>
-          <option value="">April</option>
-          <option value="">May</option>
-          <option value="">Juny</option>
-          <option value="">July</option>
-          <option value="">August</option>
-          <option value="">September</option>
-          <option value="">October</option>
-          <option value="">November</option>
-          <option value="">December</option>
-        </select>
-        <select name="" id="">
-          <option value="">2016</option>
-          <option value="">2017</option>
-          <option value="">2018</option>
-          <option value="">2019</option>
-          <option value="">2020</option>
-          <option value="">2021</option>
-        </select>
+        <SelectItem items={Months} />
+        <SelectItem items={Years} />
       </div>
       <div className="CVCField">
         <label>CVC</label>
-        <input placeholder="000" type="number" />
+        <input placeholder="000" type="number" maxLength="3" />
       </div>
     </div>
   )
 }
 
-function CheckoutButton(props) {
+const CheckoutButton = () => {
   return (
     <div className="CheckoutButton">
       <button>Book securely</button>
@@ -55,20 +71,21 @@ function CheckoutButton(props) {
   )
 }
 
-class PaymentFormComponents extends Component {
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.props.onSubmit}>
-          <div className="Title">Payment information</div>
-          <BasicInput name="name" label="Name on credit card" type="text" placeholder="Juan Perez" />
-          <BasicInput name="card" label="Credit card number" type="number" placeholder="0000 0000 0000 0000" />
-          <ExpiryDate/>
-          <CheckoutButton/>
-        </form>
-      </div>
-    );
-  }
+const PaymentFormComponents = (props) => {
+  const user = 'John Smith';
+  const defaultCard = '0000 0000 0000 0000';
+
+  return (
+    <div>
+      <form onSubmit={props.onSubmit}>
+        <div className="Title">Payment information</div>
+        <BasicInput name="name" label="Name on credit card" type="text" placeholder={user} maxLength="19" />
+        <BasicInput name="card" label="Credit card number" type="number" placeholder={defaultCard} />
+        <ExpiryDate />
+        <CheckoutButton />
+      </form>
+    </div>
+  );
 }
 
 export default PaymentFormComponents;
