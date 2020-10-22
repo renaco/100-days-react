@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Input({name, type, id, placeholder}) {
+function Input({ name, type, id, placeholder }) {
   return (
     <div className="Input">
       <input

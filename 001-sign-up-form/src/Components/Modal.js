@@ -3,7 +3,7 @@ import Input from './Input.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
-const Modal = props => {
+const Modal = (props) => {
 
   const [submit, setSubmit] = useState(props.mounted)
 
@@ -15,7 +15,7 @@ const Modal = props => {
   return (
     <div className="Modal">
       <form
-        onSubmit={ sendForm }
+        onSubmit={sendForm}
         className="ModalForm">
         <Input
           id="username"
